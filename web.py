@@ -3,6 +3,7 @@ import functions
 
 
 todos = functions.get_todos()
+st.set_page_config(layout="wide", page_title="To-Do WebApp")
 
 
 def add_todo():
@@ -23,7 +24,7 @@ for index, todo in enumerate(todos):
         del st.session_state[todo]
         st.experimental_rerun()
 
-st.text_input(label="add todo", label_visibility="hidden",
+inputBox = st.text_input(label="add todo", label_visibility="hidden",
               placeholder="Add new todo...", on_change=add_todo, key="new_todo")
 
 
